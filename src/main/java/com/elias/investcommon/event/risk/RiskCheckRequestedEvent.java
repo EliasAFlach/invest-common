@@ -1,25 +1,20 @@
-package com.elias.investcommon.event.order;
+package com.elias.investcommon.event.risk;
+
+import com.elias.investcommon.event.BaseEvent;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
-import com.elias.investcommon.event.BaseEvent;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
-
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class OrderCreatedEvent extends BaseEvent {
+public class RiskCheckRequestedEvent extends BaseEvent {
 
     private UUID orderId;
     private UUID investorId;
@@ -27,6 +22,4 @@ public class OrderCreatedEvent extends BaseEvent {
     private BigDecimal quantity;
     private BigDecimal unitPrice;
     private BigDecimal totalAmount;
-    private String currency;
-
 }

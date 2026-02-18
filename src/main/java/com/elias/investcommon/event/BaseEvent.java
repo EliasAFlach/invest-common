@@ -16,11 +16,13 @@ public abstract class BaseEvent {
     private UUID eventId;
     private UUID correlationId;
     private UUID causationId;
+    private String schemaVersion;
     private Instant occurredOn;
 
     protected BaseEvent(UUID correlationId, UUID causationId) {
         this.eventId = UUID.randomUUID();
         this.occurredOn = Instant.now();
+        this.schemaVersion = "1";
         this.correlationId = correlationId != null ? correlationId : UUID.randomUUID();
         this.causationId = causationId;
     }
