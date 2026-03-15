@@ -20,11 +20,10 @@ import java.util.UUID;
 @SuperBuilder
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class OrderRiskApprovedEvent extends BaseEvent {
+public class OrderRiskDecisionEvent extends BaseEvent {
 
     private UUID orderId;
     private UUID investorId;
-
     private RiskDecisionType decision;
     private List<String> reasons;
     private List<RuleTraceDTO> ruleTrace;
